@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS AppSec — Vulnerable by Design</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">JS AppSec</div>
+    <div class="sidebar-sub">Vulnerable by Design</div>
+  </div>
+
+  <div class="sidebar-section">Foundation</div>
+  <div class="nav-item" data-section="intro">00 Course Introduction</div>
+  <div class="nav-item" data-section="setup">01 Environment Setup</div>
+
+  <div class="sidebar-section">Injection Attacks</div>
+  <div class="nav-item" data-section="sqli">02 SQL Injection</div>
+  <div class="nav-item" data-section="xss">03 Cross-Site Scripting</div>
+  <div class="nav-item" data-section="cmdi">04 Command Injection</div>
+  <div class="nav-item" data-section="nosql">05 NoSQL Injection</div>
+
+  <div class="sidebar-section">Auth &amp; Session</div>
+  <div class="nav-item" data-section="csrf">06 CSRF</div>
+  <div class="nav-item" data-section="jwt">07 JWT Attacks</div>
+  <div class="nav-item" data-section="idor">08 IDOR</div>
+
+  <div class="sidebar-section">JS-Specific</div>
+  <div class="nav-item" data-section="proto">09 Prototype Pollution</div>
+  <div class="nav-item" data-section="deser">10 Deserialization</div>
+  <div class="nav-item" data-section="path">11 Path Traversal</div>
+  <div class="nav-item" data-section="regexdos">12 ReDoS</div>
+
+  <div class="sidebar-section">Advanced</div>
+  <div class="nav-item" data-section="cors">13 CORS Misconfiguration</div>
+  <div class="nav-item" data-section="csp">14 Content Security Policy</div>
+  <div class="nav-item" data-section="ratelimit">15 Rate-Limiting</div>
+  <div class="nav-item" data-section="smuggling">16 HTML Smuggling</div>
+
+  <div class="sidebar-section">Capstone</div>
+  <div class="nav-item" data-section="capstone">17 Full App Challenge</div>
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Progress</span>
+      <span id="prog-pct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="prog-fill"></div>
+    </div>
+  </div>
+
+  <div class="theme-toggle">
+    <span id="theme-label">Dark mode</span>
+    <div class="theme-switch" id="theme-switch"></div>
+  </div>
+</nav>
+
+<main id="content">
+  <p style="color:#888; margin-top:40px;">Loading...</p>
+</main>
+
+<!-- Lesson content files -->
+<script src="js/lessons/intro.js"></script>
+<script src="js/lessons/setup.js"></script>
+<script src="js/lessons/sqli.js"></script>
+<script src="js/lessons/xss.js"></script>
+<script src="js/lessons/cmdi.js"></script>
+<script src="js/lessons/nosql.js"></script>
+<script src="js/lessons/csrf.js"></script>
+<script src="js/lessons/jwt.js"></script>
+<script src="js/lessons/idor.js"></script>
+<script src="js/lessons/proto.js"></script>
+<script src="js/lessons/deser.js"></script>
+<script src="js/lessons/path.js"></script>
+<script src="js/lessons/regexdos.js"></script>
+<script src="js/lessons/cors.js"></script>
+<script src="js/lessons/csp.js"></script>
+<script src="js/lessons/ratelimit.js"></script>
+<script src="js/lessons/smuggling.js"></script>
+<script src="js/lessons/capstone.js"></script>
+
+<!-- App controller (must load last) -->
+<script src="js/app.js"></script>
+</body>
+</html>
