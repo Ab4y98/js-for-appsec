@@ -622,7 +622,7 @@ Server running on http://localhost:3000</pre>
 </p>
 
 <div class="section-nav">
-  <button class="nav-btn" data-next="intro">Previous: Introduction</button>
+  <button class="nav-btn" data-prev="intro">Previous: Introduction</button>
   <button class="nav-btn" data-next="sqli">Next: SQL Injection</button>
 </div>
 
