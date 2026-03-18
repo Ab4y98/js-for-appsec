@@ -1003,7 +1003,7 @@ Content-Security-Policy:
 
 <div class="section-nav">
   <button class="nav-btn" data-prev="ratelimit">Back: Rate-Limiting</button>
-  <button class="nav-btn" data-next="capstone">Next: Full App Challenge</button>
+  <button class="nav-btn" data-next="ssrf">Next: SSRF</button>
 </div>
 
 `;

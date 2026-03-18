@@ -1,7 +1,7 @@
 window.LESSONS = window.LESSONS || {};
 window.LESSONS.setup = `
 
-<h1 class="lesson-title">Environment Setup</h1>
+<h1 class="lesson-title">Lab 01: Environment Setup</h1>
 
 <p class="lesson-subtitle">
   Lab 01: Scaffold the project, install every dependency, initialize the databases, and get our deliberately

@@ -1,10 +1,10 @@
 window.LESSONS = window.LESSONS || {};
 window.LESSONS.capstone = `
 
-<h1 class="lesson-title">Lab 17: Full App Challenge (Capstone)</h1>
+<h1 class="lesson-title">Lab 18: Full App Challenge (Capstone)</h1>
 
 <p class="lesson-subtitle">
-  You have spent sixteen labs building a deliberately vulnerable application and learning how
+  You have spent seventeen labs building a deliberately vulnerable application and learning how
   each vulnerability works in isolation. Now it is time to put on the black hat. You are going to
   approach this application as an outsider -- no source code, no inside knowledge -- and chain
   multiple vulnerabilities together to go from anonymous visitor to full system compromise. This
@@ -169,7 +169,8 @@ window.LESSONS.capstone = `
 
 <p>
   When you look at your application through the STRIDE lens, you realize that the sixteen
-  vulnerabilities you built cover every single category. That is not a coincidence -- these are
+  vulnerabilities you built cover every single category. And with SSRF in Lab 17, you have also
+  seen how the server itself can be weaponized to reach internal infrastructure. That is not a coincidence -- these are
   the fundamental ways that applications fail.
 </p>
 
@@ -208,7 +209,7 @@ window.LESSONS.capstone = `
 <h2 class="step"><span class="step-label">Hardening</span> The Comprehensive Checklist</h2>
 
 <p>
-  Here is every fix you have learned across all sixteen labs, consolidated into a single
+  Here is every fix you have learned across all seventeen labs, consolidated into a single
   hardening checklist. Each item includes the "why" so you can explain it to your team and
   prioritize based on your application's specific risk profile.
 </p>
@@ -301,6 +302,10 @@ window.LESSONS.capstone = `
 <span class="cmt">20. HTML smuggling defenses</span>
 <span class="cmt">    Why: Prevents client-side payload assembly that bypasses network security.</span>
 <span class="cmt">    Strict CSP blocks inline scripts. Monitor for Blob URL creation patterns.</span>
+
+<span class="cmt">21. SSRF prevention with URL validation and DNS resolution</span>
+<span class="cmt">    Why: Prevents attackers from using your server as a proxy to internal services.</span>
+<span class="cmt">    Allowlist protocols, resolve DNS before fetching, block private IPs, disable redirects.</span>
   </pre>
 </div>
 
@@ -374,7 +379,7 @@ window.LESSONS.capstone = `
 
 <hr>
 
-<h2>Lab 17 Checklist</h2>
+<h2>Lab 18 Checklist</h2>
 
 <ul class="task-list">
   <li><span class="task-check"></span> Start from the login page and bypass authentication using SQL injection</li>
@@ -390,7 +395,7 @@ window.LESSONS.capstone = `
 </ul>
 
 <div class="section-nav">
-  <button class="nav-btn" data-prev="smuggling">Previous: HTML Smuggling</button>
+  <button class="nav-btn" data-prev="ssrf">Previous: SSRF</button>
 </div>
 
 `;

@@ -123,6 +123,17 @@ body {
   background: var(--bg3);
 }
 
+.nav-item.section-done {
+  color: var(--green);
+}
+
+.nav-item.section-done::after {
+  content: ' \2713';
+  font-size: 11px;
+  color: var(--green);
+  margin-left: 4px;
+}
+
 .progress-wrap {
   padding: 20px;
   margin-top: auto;

@@ -1,7 +1,7 @@
 window.LESSONS = window.LESSONS || {};
 window.LESSONS.xss = `
 
-<div class="lesson-title">Cross-Site Scripting</div>
+<h1 class="lesson-title">Lab 03: Cross-Site Scripting</h1>
 <div class="lesson-subtitle">
   Lab 03 — The attacker does not break into your server. They make your server
   deliver their code to your users' browsers. Three variants, one devastating outcome.

@@ -1,7 +1,7 @@
 window.LESSONS = window.LESSONS || {};
 window.LESSONS.sqli = `
 
-<div class="lesson-title">SQL Injection</div>
+<h1 class="lesson-title">Lab 02: SQL Injection</h1>
 <div class="lesson-subtitle">
   Lab 02 — The vulnerability that has been destroying applications since the late 1990s.
   You are going to build it, exploit it three different ways, and then fix it for good.

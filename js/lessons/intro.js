@@ -5,7 +5,7 @@ window.LESSONS.intro = `
 
 <p class="lesson-subtitle">
   A hands-on security training course where you deliberately build, break, and fix vulnerable Node.js applications.
-  Sixteen labs. Sixteen vulnerabilities. One very broken Express app.
+  Seventeen labs. Seventeen vulnerabilities. One very broken Express app.
 </p>
 
 <hr>
@@ -30,7 +30,7 @@ window.LESSONS.intro = `
 <h2>What This Course Is</h2>
 
 <p>
-  This is a 16-lab, hands-on training program covering the OWASP Top 10 vulnerabilities as they appear in
+  This is a 17-lab, hands-on training program covering the OWASP Top 10 vulnerabilities as they appear in
   real-world Node.js and Express applications. Each lab follows a consistent structure: you will understand
   the vulnerability, build code that contains it, exploit that code yourself, and then implement the proper fix.
   No multiple-choice quizzes. No abstract threat models. Just you, your terminal, and code that is trying very
@@ -87,7 +87,7 @@ window.LESSONS.intro = `
 <h2>What You Will Build</h2>
 
 <p>
-  Over the course of these sixteen labs, you will build a deliberately vulnerable Express/Node.js web application.
+  Over the course of these seventeen labs, you will build a deliberately vulnerable Express/Node.js web application.
   It is a simple multi-user platform with authentication, user profiles, posts, notes, and an admin panel. Nothing
   fancy on the surface. Under the hood, it is a minefield of security flaws -- every one of them modeled on
   vulnerabilities I have personally seen in production codebases at companies you have heard of.
@@ -100,7 +100,7 @@ window.LESSONS.intro = `
   fighting framework abstractions.
 </p>
 
-<h2>The Sixteen Labs</h2>
+<h2>The Seventeen Labs</h2>
 
 <p>
   Here is what you will work through, lab by lab. Each one builds on the application you started in the
@@ -124,6 +124,7 @@ window.LESSONS.intro = `
   <li><strong>Lab 14 -- Content Security Policy (CSP):</strong> You will bypass weak CSP configurations using unsafe-inline, JSONP endpoints, and base-uri hijacking, then implement strict nonce-based CSP that actually stops XSS.</li>
   <li><strong>Lab 15 -- Rate-Limiting &amp; Brute Force:</strong> You will brute-force unprotected login endpoints, bypass IP-based rate limits using X-Forwarded-For manipulation, and exploit response timing side-channels, then build layered defenses with express-rate-limit.</li>
   <li><strong>Lab 16 -- HTML Smuggling:</strong> You will construct malicious files client-side using Blob URLs and data URIs to bypass proxy and email scanning, exploit anchor tag download tricks, and use encoding obfuscation to evade static analysis.</li>
+  <li><strong>Lab 17 -- Server-Side Request Forgery (SSRF):</strong> You will trick the server into fetching internal resources by abusing URL preview endpoints, steal cloud metadata credentials from 169.254.169.254, read local files via file:// protocol abuse, and detect blind SSRF using out-of-band callbacks, then build layered defenses with DNS resolution validation and private IP blocking.</li>
 </ol>
 
 <h2>How Long Will This Take?</h2>
@@ -155,7 +156,7 @@ window.LESSONS.intro = `
 <div class="callout info">
   <div class="callout-title">What You Will Walk Away With</div>
   <div class="callout-text">
-    By the end of these sixteen labs, you will have an intuitive understanding of how the most common web
+    By the end of these seventeen labs, you will have an intuitive understanding of how the most common web
     vulnerabilities work at a code level. You will be able to spot injection points in code review, design
     authentication systems that do not fall apart under pressure, and have a working mental model of how attackers
     think. That mental model is the single most valuable thing a developer can carry into any security conversation.
