@@ -528,10 +528,76 @@ module.exports <span class="op">=</span> db;</pre>
 
 <hr>
 
-<h2>Running the Application</h2>
+<h2>The Index View</h2>
+
+<p>
+  Our app.js renders <code>views/index.ejs</code> on the root route, so we need to create it. This is the
+  landing page — it shows the logged-in user's name if a session exists, or a login link if not. Create the
+  <code>views</code> directory and add this file:
+</p>
 
 <div class="step">
   <div class="step-label">5</div>
+  <div>
+    <strong>Create views/index.ejs</strong>
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-file">views/index.ejs</span>
+        <button class="code-copy">Copy</button>
+      </div>
+      <pre><span class="op">&lt;!</span><span class="kw">DOCTYPE</span> html<span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="kw">html</span> lang<span class="op">=</span><span class="str">"en"</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="kw">head</span><span class="op">&gt;</span>
+  <span class="op">&lt;</span><span class="kw">meta</span> charset<span class="op">=</span><span class="str">"UTF-8"</span><span class="op">&gt;</span>
+  <span class="op">&lt;</span><span class="kw">meta</span> name<span class="op">=</span><span class="str">"viewport"</span> content<span class="op">=</span><span class="str">"width=device-width, initial-scale=1.0"</span><span class="op">&gt;</span>
+  <span class="op">&lt;</span><span class="kw">title</span><span class="op">&gt;</span>Vuln App<span class="op">&lt;/</span><span class="kw">title</span><span class="op">&gt;</span>
+  <span class="op">&lt;</span><span class="kw">link</span> rel<span class="op">=</span><span class="str">"stylesheet"</span> href<span class="op">=</span><span class="str">"/css/style.css"</span><span class="op">&gt;</span>
+<span class="op">&lt;/</span><span class="kw">head</span><span class="op">&gt;</span>
+<span class="op">&lt;</span><span class="kw">body</span><span class="op">&gt;</span>
+  <span class="op">&lt;</span><span class="kw">nav</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="kw">a</span> href<span class="op">=</span><span class="str">"/"</span><span class="op">&gt;</span>Home<span class="op">&lt;/</span><span class="kw">a</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="kw">a</span> href<span class="op">=</span><span class="str">"/search"</span><span class="op">&gt;</span>Search<span class="op">&lt;/</span><span class="kw">a</span><span class="op">&gt;</span>
+    <span class="cmt">&lt;%</span> <span class="kw">if</span> (user) { <span class="cmt">%&gt;</span>
+      <span class="op">&lt;</span><span class="kw">a</span> href<span class="op">=</span><span class="str">"/profile"</span><span class="op">&gt;</span>Profile<span class="op">&lt;/</span><span class="kw">a</span><span class="op">&gt;</span>
+      <span class="op">&lt;</span><span class="kw">a</span> href<span class="op">=</span><span class="str">"/logout"</span><span class="op">&gt;</span>Logout<span class="op">&lt;/</span><span class="kw">a</span><span class="op">&gt;</span>
+    <span class="cmt">&lt;%</span> } <span class="kw">else</span> { <span class="cmt">%&gt;</span>
+      <span class="op">&lt;</span><span class="kw">a</span> href<span class="op">=</span><span class="str">"/login"</span><span class="op">&gt;</span>Login<span class="op">&lt;/</span><span class="kw">a</span><span class="op">&gt;</span>
+    <span class="cmt">&lt;%</span> } <span class="cmt">%&gt;</span>
+  <span class="op">&lt;/</span><span class="kw">nav</span><span class="op">&gt;</span>
+
+  <span class="op">&lt;</span><span class="kw">main</span><span class="op">&gt;</span>
+    <span class="op">&lt;</span><span class="kw">h1</span><span class="op">&gt;</span>Vuln App<span class="op">&lt;/</span><span class="kw">h1</span><span class="op">&gt;</span>
+    <span class="cmt">&lt;%</span> <span class="kw">if</span> (user) { <span class="cmt">%&gt;</span>
+      <span class="op">&lt;</span><span class="kw">p</span><span class="op">&gt;</span>Welcome back, <span class="cmt">&lt;%-</span> user.username <span class="cmt">%&gt;</span>!<span class="op">&lt;/</span><span class="kw">p</span><span class="op">&gt;</span>
+    <span class="cmt">&lt;%</span> } <span class="kw">else</span> { <span class="cmt">%&gt;</span>
+      <span class="op">&lt;</span><span class="kw">p</span><span class="op">&gt;</span>Please <span class="op">&lt;</span><span class="kw">a</span> href<span class="op">=</span><span class="str">"/login"</span><span class="op">&gt;</span>log in<span class="op">&lt;/</span><span class="kw">a</span><span class="op">&gt;</span> to continue.<span class="op">&lt;/</span><span class="kw">p</span><span class="op">&gt;</span>
+    <span class="cmt">&lt;%</span> } <span class="cmt">%&gt;</span>
+  <span class="op">&lt;/</span><span class="kw">main</span><span class="op">&gt;</span>
+<span class="op">&lt;/</span><span class="kw">body</span><span class="op">&gt;</span>
+<span class="op">&lt;/</span><span class="kw">html</span><span class="op">&gt;</span></pre>
+    </div>
+
+    <p>
+      Notice two things that are intentionally vulnerable in this template:
+    </p>
+
+    <ul>
+      <li><strong><code>&lt;%- user.username %&gt;</code> (unescaped output):</strong> The <code>&lt;%-</code> tag
+        outputs raw HTML without escaping. If a username contains <code>&lt;script&gt;</code> tags, they will execute.
+        The safe version is <code>&lt;%= %&gt;</code> which HTML-encodes the output. We use the dangerous version
+        here because this exact pattern is how Stored XSS happens — you will exploit it in Lab 03.</li>
+      <li><strong>No CSP meta tag:</strong> There is no Content-Security-Policy header or meta tag, so the browser
+        will execute any inline script that gets injected.</li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<h2>Running the Application</h2>
+
+<div class="step">
+  <div class="step-label">6</div>
   <div>
     <strong>Add a start script and install nodemon</strong>
     <p>
@@ -562,7 +628,7 @@ module.exports <span class="op">=</span> db;</pre>
 </div>
 
 <div class="step">
-  <div class="step-label">6</div>
+  <div class="step-label">7</div>
   <div>
     <strong>Initialize the database and start the server</strong>
     <div class="code-block">
